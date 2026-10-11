@@ -22,22 +22,16 @@ app = FastAPI(
 
 
 # =========================================================
-# 2. ENABLE CORS
+# 2. ENABLE CORS (Fully Fixed for Vercel & Render)
 # =========================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:5174",
-        "http://127.0.0.1:5174",
-        "https://support-ticket-agent.vercel.app",
-        "https://support-ticket-agent-bkvnsri6w-hemant-mishra.vercel.app",
-    ],
+    allow_origins=["*"],  # Sabhi origins (Vercel, Localhost, etc.) ko allow karta hai
     allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # GET, POST, OPTIONS, etc. sabhi methods allow
+    allow_headers=["*"],  # Sabhi headers allow
 )
+
 
 # =========================================================
 # 3. REQUEST MODELS
@@ -165,8 +159,6 @@ def ticket_follow_up(request: FollowUpRequest):
             attempt_number=request.attempt_number,
         )
 
-        # This endpoint does not create a new database ticket.
-        # Final submission must happen through the submission flow.
         return {
             "success": True,
             "ticket": request.ticket,
