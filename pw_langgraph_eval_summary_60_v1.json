@@ -1,0 +1,16 @@
+{
+  "agent": "LangGraph: ticket_agent_graph.process_ticket_with_graph",
+  "total_cases": 60,
+  "processed_without_error": 60,
+  "error_count": 0,
+  "category_exact_match_accuracy": 0.8833,
+  "macro_precision": 0.9518,
+  "macro_recall": 0.9462,
+  "macro_f1": 0.9478,
+  "human_review_accuracy": 0.8833,
+  "risk_scored_cases": 10,
+  "risk_accuracy_on_scored_cases": 0.6,
+  "reply_generated_count": 60,
+  "cases_with_sources_count": 60,
+  "note": "Metrics describe this curated 60-ticket set only; they do not guarantee real-world performance."
+}

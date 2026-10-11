@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+
+venv/
+__pycache__/
+*.pyc
+node_modules/
+.git/
+
+old_evaluation_backup/
+*_backup.py
+main_backup_*.py
+.gitignore.backup
+frontend/src/App_backup_before_chatbot.jsx
