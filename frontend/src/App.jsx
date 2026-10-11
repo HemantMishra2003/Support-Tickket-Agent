@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import "./App.css";
-
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://support-tickket-agent.onrender.com";
 
 // ================= APP ROUTING =================
 
