@@ -1,6 +1,6 @@
 ###   Decision and Logic Building
 
-#######  1. Payment Verification
+#######  Payment Verification
 
 -Payment-related tickets are escalated to human support when payment 
 -verification is required. Since the system does not have direct access to 
