@@ -2,61 +2,65 @@
 
 #### Payment Verification
 
-Payment-related tickets are escalated to human support when payment verification is required. Since the system does not have direct access to a payment verification mechanism, it cannot independently confirm whether a transaction was successful. Therefore, it collects the necessary details from the student and routes the case for human verification instead of making unsupported assumptions about the payment status.
+    Payment-related tickets are escalated to human support when payment verification is required. 
+    Since the system does not have direct access to a payment verification mechanism, 
+    it cannot independently confirm whether a transaction was successful. 
+    Therefore, it collects the necessary details from the student and routes the case
+    for human verification instead of making unsupported assumptions about the payment status.
 ##### Academic Doubts
 
--For academic queries, the AI agent attempts to explain 
--the concept up to three times to help the student understand it. 
--If the student is still unable to understand the explanation or
--explicitly requests to speak with a teacher, the agent initiates the
--human escalation process. The student is asked to fill out a short form
--containing the required details so the query can be forwarded to the appropriate
--teacher or academic support team.
+    -For academic queries, the AI agent attempts to explain 
+    -the concept up to three times to help the student understand it. 
+    -If the student is still unable to understand the explanation or
+    -explicitly requests to speak with a teacher, the agent initiates the
+    -human escalation process. The student is asked to fill out a short form
+    -containing the required details so the query can be forwarded to the appropriate
+    -teacher or academic support team.
 
 #### Refund Queries
 
--For refund-related queries, the agent retrieves information from the available 
--official refund policy and related knowledge-base documents. It uses this information
--to explain the applicable refund rules to the student.
+     -For refund-related queries, the agent retrieves information from the available 
+    -official refund policy and related knowledge-base documents. It uses this information
+    -to explain the applicable refund rules to the student.
 
--If the student still needs clarification, cannot resolve the issue using the provided information,
--or requires further assistance, the agent escalates the case to human support and forwards t
--he relevant details for follow-up.
+    -If the student still needs clarification, cannot resolve the issue using the provided information,
+    -or requires further assistance, the agent escalates the case to human support and forwards t
+    -he relevant details for follow-up.
 
 
 #### Technical Support
 
-- For technical issues, such as app crashes, video playback errors, login problems,
-- or course access difficulties,
--  the AI agent retrieves relevant troubleshooting information from the available knowledge base
--  and provides appropriate guidance to the student.
+    - For technical issues, such as app crashes, video playback errors, login problems,
+    - or course access difficulties,
+    -  the AI agent retrieves relevant troubleshooting information from the available knowledge base
+    -  and provides appropriate guidance to the student.
 
-- The agent attempts to help the student resolve the issue using the available troubleshooting steps.
--  If the problem persists after the suggested solutions, requires further investigation, or cannot be
--   resolved using the available information, the case is escalated to human support for further assistance.
+    - The agent attempts to help the student resolve the issue using the available troubleshooting steps.
+    -  If the problem persists after the suggested solutions, requires further investigation, or cannot be
+    -   resolved using the available information, the case is escalated to human support for further assistance.
 
 #### General Support
 
-- For general support queries that do not fall clearly under payment, refund, academic, or
-- technical support, the AI agent analyses the student's request and provides relevant information
--  based on the available knowledge base.
+    - For general support queries that do not fall clearly under payment, refund, academic, or
+    - technical support, the AI agent analyses the student's request and provides relevant information
+    -  based on the available knowledge base.
 
-- If the query cannot be resolved using the available information, requires intervention from
--  the support team, or involves a situation that needs further investigation, the agent routes
--  the case to human support. Relevant details are collected to help the support team understand
--  the issue and provide appropriate assistance.
+     - If the query cannot be resolved using the available information, requires intervention from
+     -  the support team, or involves a situation that needs further investigation, the agent routes
+    -  the case to human support. Relevant details are collected to help the support team understand
+    -  the issue and provide appropriate assistance.
 
 
 
 
 #######  Design Principle
+ 
+    - The system follows a human-in-the-loop approach for situations that require transaction verification,
+    - personalized academic assistance, or additional clarification beyond the available knowledge base.
 
-- The system follows a human-in-the-loop approach for situations that require transaction verification,
-- personalized academic assistance, or additional clarification beyond the available knowledge base.
-
-- This approach helps prevent unsupported payment-status claims, provides students with multiple
-- opportunities to understand academic explanations, and ensures that unresolved refund queries can
-- be reviewed by human support staff.
+    - This approach helps prevent unsupported payment-status claims, provides students with multiple
+    - opportunities to understand academic explanations, and ensures that unresolved refund queries can
+    - be reviewed by human support staff.
 
 
 
@@ -137,12 +141,12 @@ Payment-related tickets are escalated to human support when payment verification
 </table>
 
 
--  here batch and human review  accuracy  is problamatic
--  since model gets confuse , due limited data we have chunked
+    -  here batch and human review  accuracy  is problamatic
+    -  since model gets confuse , due limited data we have chunked
 
 ####   Limitation
- - due to severe less official data  , this evalautio is not enough in
- - in 60 tickets 
+     - due to severe less official data  , this evalautio is not enough in
+     - in 60 tickets 
 
 
 
@@ -151,21 +155,33 @@ Payment-related tickets are escalated to human support when payment verification
 
 ### 1. Human Review Evaluation
 
-The agent's human-review decision accuracy was **90% (54 out of 60 tickets)**.
+    The agent's human-review decision accuracy was **90% (54 out of 60 tickets)**.
 
-The evaluation identified cases where tickets requiring human intervention were not flagged for review. For example, some persistent academic and technical issues were marked for automatic handling instead of being escalated.
+    The evaluation identified cases where tickets requiring human intervention were
+    not flagged for review. For example, some persistent academic and technical 
+    issues were marked for automatic handling instead of being escalated.
 
-The evaluation also identified cases where the agent flagged tickets for human review even though the expected evaluation label did not require it.
+    The evaluation also identified cases where the agent flagged tickets for human 
+    review even though the expected evaluation label did not require it.
 
-These findings highlight the need to improve escalation decisions, particularly for unresolved issues and cases requiring human intervention.
+     These findings highlight the need to improve escalation decisions, particularly
+     for unresolved issues and cases requiring human intervention.
+
+
 
 ### 2. Risk/Priority Evaluation
 
-Risk prediction was evaluated on **10 scored cases**, of which **6 were correctly classified, resulting in 60% accuracy**.
+    Risk prediction was evaluated on **10 scored cases**, of which **6 were
+    correctly classified, resulting in 60% accuracy**.
 
-The evaluation identified instances where high-risk cases were assigned a medium-risk level, including cases involving potential payment-security issues, privacy concerns, and unauthorized account access.
+    The evaluation identified instances where high-risk cases were assigned a
+    medium-risk level, including cases involving potential payment-security
+    issues, privacy concerns, and unauthorized account access.
 
-These findings indicate that the agent needs to improve its ability to identify high-risk situations and assign appropriate priority levels.
+
+    These findings indicate that the agent needs to improve its ability to 
+    identify high-risk situations and assign appropriate priority levels.
+
 
 ### Evaluation Summary
 
@@ -177,7 +193,6 @@ These findings indicate that the agent needs to improve its ability to identify 
 | Correct Risk Predictions | 6 |
 | Risk Prediction Accuracy | 60% |
 
-**Note:** These results are based on a curated evaluation dataset of 60 support tickets. Risk accuracy was calculated only on the 10 cases included in the risk evaluation. The results do not guarantee real-world performance.
 
 
        
