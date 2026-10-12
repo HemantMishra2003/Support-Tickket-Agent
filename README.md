@@ -1,14 +1,8 @@
 ###   Decision and Logic Building
 
-####  Payment Verification
+#### Payment Verification
 
--Payment-related tickets are escalated to human support when payment 
--verification is required. Since the system does not have direct access to 
--a payment verification mechanism, it cannot independently confirm whether a
--transaction was successful. Therefore, it collects the necessary details from
--the student and routes the case for human verification instead of making unsupported
--assumptions about the payment status.
-
+Payment-related tickets are escalated to human support when payment verification is required. Since the system does not have direct access to a payment verification mechanism, it cannot independently confirm whether a transaction was successful. Therefore, it collects the necessary details from the student and routes the case for human verification instead of making unsupported assumptions about the payment status.
 ##### Academic Doubts
 
 -For academic queries, the AI agent attempts to explain 
