@@ -1,6 +1,6 @@
 ###   Decision and Logic Building
 
-######  Payment Verification
+####  Payment Verification
 
 -Payment-related tickets are escalated to human support when payment 
 -verification is required. Since the system does not have direct access to 
@@ -9,7 +9,7 @@
 -the student and routes the case for human verification instead of making unsupported
 -assumptions about the payment status.
 
-2. Academic Doubts
+##### Academic Doubts
 
 -For academic queries, the AI agent attempts to explain 
 -the concept up to three times to help the student understand it. 
@@ -19,7 +19,7 @@
 -containing the required details so the query can be forwarded to the appropriate
 -teacher or academic support team.
 
-3. Refund Queries
+#### Refund Queries
 
 -For refund-related queries, the agent retrieves information from the available 
 -official refund policy and related knowledge-base documents. It uses this information
@@ -30,16 +30,39 @@
 -he relevant details for follow-up.
 
 
+#### Technical Support
+
+- For technical issues, such as app crashes, video playback errors, login problems,
+- or course access difficulties,
+-  the AI agent retrieves relevant troubleshooting information from the available knowledge base
+-  and provides appropriate guidance to the student.
+
+- The agent attempts to help the student resolve the issue using the available troubleshooting steps.
+-  If the problem persists after the suggested solutions, requires further investigation, or cannot be
+-   resolved using the available information, the case is escalated to human support for further assistance.
+
+#### General Support
+
+- For general support queries that do not fall clearly under payment, refund, academic, or
+- technical support, the AI agent analyses the student's request and provides relevant information
+-  based on the available knowledge base.
+
+- If the query cannot be resolved using the available information, requires intervention from
+-  the support team, or involves a situation that needs further investigation, the agent routes
+-  the case to human support. Relevant details are collected to help the support team understand
+-  the issue and provide appropriate assistance.
+
+
 
 
 #######  Design Principle
 
--The system follows a human-in-the-loop approach for situations that require transaction verification,
--personalized academic assistance, or additional clarification beyond the available knowledge base.
+- The system follows a human-in-the-loop approach for situations that require transaction verification,
+- personalized academic assistance, or additional clarification beyond the available knowledge base.
 
--This approach helps prevent unsupported payment-status claims, provides students with multiple
--opportunities to understand academic explanations, and ensures that unresolved refund queries can
--be reviewed by human support staff.
+- This approach helps prevent unsupported payment-status claims, provides students with multiple
+- opportunities to understand academic explanations, and ensures that unresolved refund queries can
+- be reviewed by human support staff.
 
 
 
