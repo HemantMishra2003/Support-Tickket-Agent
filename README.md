@@ -1,3 +1,70 @@
+
+## LangGraph Architecture
+
+```text
+                  +----------------------+
+                  |   Student Ticket     |
+                  | (Support Query)      |
+                  +----------+-----------+
+                             |
+                             v
+                  +----------------------+
+                  |   Ticket Analysis    |
+                  | Understand the Issue |
+                  +----------+-----------+
+                             |
+                             v
+                  +----------------------+
+                  |  Ticket Classifier   |
+                  |----------------------|
+                  | - Payment            |
+                  | - Refund             |
+                  | - Academic Doubt     |
+                  | - Technical          |
+                  | - Batch Access       |
+                  | - Fee Structure      |
+                  | - Human Review       |
+                  +----------+-----------+
+                             |
+                             v
+                  +----------------------+
+                  |   Risk Assessment    |
+                  | Identify Risk Level  |
+                  +----------+-----------+
+                             |
+                             v
+                  +----------------------+
+                  |   Routing Decision   |
+                  |----------------------|
+                  | Human Review Needed? |
+                  +-----+----------+-----+
+                        |          |
+                 Yes    |          |    No
+                        v          v
+             +----------------+  +----------------+
+             | Human Support  |  | Knowledge Base |
+             | Escalation     |  | Retrieval (RAG)|
+             +-------+--------+  +-------+--------+
+                     |                   |
+                     |                   v
+                     |          +----------------+
+                     |          | Generate Reply |
+                     |          | Using Context  |
+                     |          +-------+--------+
+                     |                  |
+                     +--------+---------+
+                              |
+                              v
+                   +---------------------+
+                   |   Final Response    |
+                   |  To the Student     |
+                   +---------------------+
+```
+
+
+
+
+
 ###   Decision and Logic Building
 
 #### Payment Verification
@@ -192,6 +259,11 @@
 | Risk-Scored Cases | 10 |
 | Correct Risk Predictions | 6 |
 | Risk Prediction Accuracy | 60% |
+
+
+####  LangGraph Architecture
+
+  
 
 
 
